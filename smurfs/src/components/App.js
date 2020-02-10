@@ -12,22 +12,12 @@ function App () {
   const getSmurf = () => {
     axios.get('http://localhost:3333/smurfs')
       .then(res => {
-        console.log(res);
+        //console.log(res);
         setSmurf(res.data);
       })
       .catch(err => {
-        console.log('Error!')
+        console.log('Error!', err)
       })
-  }
-
-  const postSmurf = () => {
-    axios.post('http://localhost:3333/smurfs')
-    .then(res => {
-      setSmurf(res.data)
-    })
-    .catch(err => {
-      console.log('Error!')
-    })
   }
 
   useEffect(() => {
@@ -36,7 +26,7 @@ function App () {
   //dependency array is for when to run this function getSmurf()
 
   return(
-    <smurfContext.Provider value={smurf, getSmurf}>
+    <smurfContext.Provider value={smurf}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ Context API</h1>
         <SmurfForm />
