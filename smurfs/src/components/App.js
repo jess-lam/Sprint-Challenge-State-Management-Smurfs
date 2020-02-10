@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 import smurfContext from "../contexts/SmurfContext";
 import SmurfForm from "./SmurfForm";
+import SmurfList from "./SmurfList";
 
 
 function App () {
@@ -26,10 +27,11 @@ function App () {
   //dependency array is for when to run this function getSmurf()
 
   return(
-    <smurfContext.Provider value={smurf}>
+    <smurfContext.Provider value={{smurf}}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ Context API</h1>
         <SmurfForm />
+        <SmurfList />
       </div>
     </smurfContext.Provider>
     

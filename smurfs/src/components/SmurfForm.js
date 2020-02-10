@@ -18,9 +18,9 @@ const SmurfForm = (props) => {
     }
 
     const handleSubmit = e => {
-        e.preventDefaßult();
+        e.preventDefault();
         
-            axios.post('http://localhost:3333/smurfs', {newSmurf})
+            axios.post('http://localhost:3333/smurfs', newSmurf)
             .then(res => {
               console.log(res);
             })

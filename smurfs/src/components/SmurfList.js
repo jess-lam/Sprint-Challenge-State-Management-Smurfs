@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {smurfContext} from "../contexts/SmurfContext";
+import smurfContext from "../contexts/SmurfContext";
 import SmurfCard from "./SmurfCard";
 
 export default function SmurfList() {
@@ -11,7 +11,7 @@ export default function SmurfList() {
                 {smurf.map(item => (
                     <SmurfCard
                     key={item.id}
-                    name={item.id}
+                    name={item.name}
                     age={item.age}
                     height={item.height}
                     />
